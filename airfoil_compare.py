@@ -8,7 +8,7 @@ from Functions import AtmosPropStd as std
 import streamlit as st
 import matplotlib.pyplot as plt
 
-st.set_option('deprecation.showPyplotGlobalUse', False)
+# st.set_option('deprecation.showPyplotGlobalUse', False)
 
 
 with st.container(border=True):
@@ -21,7 +21,7 @@ with st.container(border=True):
     velocity= st.number_input("v infinite (m/s)",value= 36.0)
     col_aa,col_bb= st.columns(2)
     with col_aa:
-        chord= st.number_input("Wing chord (m)")
+        chord= st.number_input("Wing chord (cm)",value=25)*0.01
     with col_bb:
         rho= atmos.airdens_kgpm3(alt)
         dyn_vis= std(alt,13)
@@ -52,15 +52,15 @@ af_array= [asb.Airfoil(airfoil_array[i]) for i in range(len(airfoil_array))]
 with st.container():
     col_1,col_2= st.columns(2)
     with col_1:
-        fig, ax = plt.subplots(figsize=(6, 2))
+        fig, ax = plt.subplots()
         st.pyplot(af_array[0].draw())
-        fig, bx = plt.subplots(figsize=(6, 2))
+        fig, bx = plt.subplots()
         st.pyplot(af_array[1].draw())
 
     with col_2:
-        fig, cx = plt.subplots(figsize=(6, 2))
+        fig, cx = plt.subplots()
         st.pyplot(af_array[2].draw())
-        fig, dx = plt.subplots(figsize=(6, 2))
+        fig, dx = plt.subplots()
         st.pyplot(af_array[3].draw())
 
 re = [re_min]
