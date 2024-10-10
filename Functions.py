@@ -1,4 +1,5 @@
 def AtmosPropStd(Href, PropertyID):
+    #from Gudmundsson's book, translated into python
     # This function calculates an atmospheric property based on the variable
     # PropertyID at the given altitude H in ft, where:
     # If PropertyID = 0 then return Temperature ratio
