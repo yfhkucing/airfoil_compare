@@ -16,9 +16,9 @@ with st.container(border=True):
 
     atmos= at.Atmosphere()
 
-    alt= st.number_input("Altitude (m)",value= 3048.0)
+    alt= st.number_input("Altitude (m)",value= 500.0)
     
-    velocity= st.number_input("v infinite (m/s)",value= 36.0)
+    velocity= st.number_input("v infinite (m/s)",value= 20.0)
     col_aa,col_bb= st.columns(2)
     with col_aa:
         chord= st.number_input("Wing chord (cm)",value=25)*0.01
